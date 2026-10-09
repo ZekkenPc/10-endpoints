@@ -1,20 +1,20 @@
-# Usa una imagen ligera de Node.js
-FROM node:18-alpine
+# Imagen ligera de Node.js (la 18 ya no tiene soporte)
+FROM node:20-alpine
 
-# Establece el directorio de trabajo dentro del contenedor
+# Directorio de trabajo dentro del contenedor
 WORKDIR /usr/src/app
 
-# Copia los archivos de configuración de paquetes
+# Copia los archivos de paquetes
 COPY package*.json ./
 
-# Instala las dependencias
-RUN npm install
+# Instala solo dependencias de producción (sin jest ni supertest)
+RUN npm ci --omit=dev
 
-# Copia todo el código fuente de la aplicación
+# Copia el código fuente
 COPY . .
 
-# Expone el puerto 80 (El que indicamos en Express)
+# Puerto que usa Express
 EXPOSE 80
 
-# Comando para iniciar la aplicación
+# Inicia la aplicación
 CMD ["node", "index.js"]

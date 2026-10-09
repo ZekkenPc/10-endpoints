@@ -1,0 +1,7 @@
+node_modules/
+npm-debug.log
+database.sqlite
+backup.sqlite
+coverage/
+dist/
+*.log

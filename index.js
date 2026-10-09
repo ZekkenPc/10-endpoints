@@ -123,11 +123,14 @@ app.delete("/api/database/vaciar", (req, res) => {
     });
   });
 });
-
 app.get("/api/health", (req, res) => {
-  res
-    .status(200)
-    .json(formatResponse(200, { status: "OK", timestamp: new Date() }));
+  res.status(200).json(
+    formatResponse(200, {
+      status: "OK",
+      message: "todo bien mensaje 1",
+      timestamp: new Date(),
+    }),
+  );
 });
 
 app.get("/api/stats", (req, res) => {

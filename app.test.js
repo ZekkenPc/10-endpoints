@@ -51,7 +51,7 @@ describe("Salud y estadísticas", () => {
     expect(res.body.statusCode).toBe(200);
     expect(res.body.data[0].status).toBe("OK");
     expect(res.body.data[0].status).toBe("OK");
-    expect(res.body.data[0].message).toBe("todo bien mensaje 1");
+    expect(res.body.data[0].message).toBe("todo bien mensaje 3");
   });
 
   test("GET /api/stats cuenta las tareas", async () => {

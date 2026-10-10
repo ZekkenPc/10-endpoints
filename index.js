@@ -126,8 +126,8 @@ app.delete("/api/database/vaciar", (req, res) => {
 app.get("/api/health", (req, res) => {
   res.status(200).json(
     formatResponse(200, {
-      status: "OK",
-      message: "todo bien mensaje 1",
+      status: "OK2",
+      message: "todo bien mensaje 3",
       timestamp: new Date(),
     }),
   );
